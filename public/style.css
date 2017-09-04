@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#modal {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  background-image: url(https://i.pinimg.com/736x/80/2d/57/802d573c62b99c9f783e5a5739d3e0e0--onam-greetings-onam-wishes.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#modal button {
+  color: #ddd;
+  position: absolute;
+  right: 10px;
+  font-size: 24px;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+}
+
+.search-bar {
+  margin: 20px;
+  text-align: center;
+}
+
+.search-bar a {
+  max-width: 20%;
+  margin-right: 5%;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.search-bar a:hover {
+  text-decoration: none;
+}
+
+.search-bar input {
+  width: 75%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#logo-first {
+  color: indianred;
+  font-family: fantasy;
+}
+
+#logo-second {
+  color: deepskyblue;
+  font-family: monospace;
+}
+
+a:hover #logo-first {
+  color: deepskyblue;
+}
+
+a:hover #logo-second {
+  color: indianred;
+}
+
+.video-item img {
+  max-width: 64px;
+}
+
+.video-detail .details {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.list-group-item:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  margin: 20px auto 5px auto;
+}
+
+@media (max-width: 767px) {
+  #modal {
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    bottom: 100px;
+    background-position: bottom;
+  }
+
+  ul.list-group {
+    padding: 0 10px;
+  }
+
+  div.video-detail {
+    padding: 0 10px;
+  }
+
+  .search-bar a {
+    max-width: 20%;
+  }
+
+  .search-bar input {
+    margin-top: 10px;
+    max-width: 60%;
+  }
+
+  .media-heading {
+    font-size: 12px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
