@@ -86,6 +86,10 @@ a:hover #logo-second {
   border-radius: 4px;
 }
 
+.loading {
+  text-align: center;
+}
+
 .list-group-item:hover {
   cursor: pointer;
   background-color: #ddd;
