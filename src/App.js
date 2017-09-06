@@ -5,7 +5,7 @@ import _ from 'lodash';
 import SearchBar from './SearchBar';
 import VideoList from './VideoList';
 import VideoDetails from './VideoDetails';
-import CustomModal from './CustomModal';
+// import CustomModal from './CustomModal';
 
 const API_KEY = 'AIzaSyCgoeuaHAXVtwL8_eAn6r6XzU7N8lMLwRw';
 
@@ -15,10 +15,10 @@ export default class App extends Component {
     this.state = {
       videos: [],
       selected: null,
-      showModal: true
+      // showModal: true
     };
 
-    this.videoSearch('onam');
+    this.videoSearch('');
   }
 
   videoSearch = term => {
@@ -34,7 +34,7 @@ export default class App extends Component {
   closeModal = () => this.setState({ showModal: false })
 
   render() {
-    const videoSearch = _.debounce(term => {this.videoSearch(term)}, 300);
+    const videoSearch = _.debounce(term => {this.videoSearch(term)}, 200);
 
     return (
       <div>
@@ -47,11 +47,11 @@ export default class App extends Component {
         <footer>
           powered by <a href='https://www.youtube.com'>youtube</a>
         </footer>
-        {
+        {/* {
           this.state.showModal ?
           <CustomModal closeModal={this.closeModal}/> :
           null
-        }
+        } */}
       </div>
     );
   }

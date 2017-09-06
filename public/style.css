@@ -24,15 +24,23 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  align-content: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 #modal button {
-  color: #ddd;
+  color: orange;
+  margin-top: 50px;
   position: absolute;
-  right: 10px;
-  font-size: 24px;
+  font-size: 12px;
   background-color: rgba(0,0,0,0);
-  border: 0;
+  border: 1px solid orange;
+  border-radius: 5px;
+  padding: 5px;
+  animation: button-flash infinite 2s ease;
 }
 
 .search-bar {
@@ -134,5 +142,17 @@ footer {
 
   footer {
     font-size: 10px;
+  }
+}
+
+@keyframes button-flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
