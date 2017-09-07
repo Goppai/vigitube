@@ -44,9 +44,9 @@ export default class App extends Component {
           videos={this.state.videos}
           selectVideo={selected => this.setState({ selected })}
         />
-        <footer>
+        <div className='footer'>
           powered by <a href='https://www.youtube.com'>youtube</a>
-        </footer>
+        </div>
         {/* {
           this.state.showModal ?
           <CustomModal closeModal={this.closeModal}/> :
