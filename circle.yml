@@ -13,9 +13,9 @@ compile:
     - yarn build
 test:
   override:
-    - yarn test --coverage -u
+    - yarn test --coverage
   post:
-    - npm install -g codeclimate-test-reporter
+    - yarn global add codeclimate-test-reporter
     - codeclimate-test-reporter < public/coverage/lcov.info
 deployment:
   production:
