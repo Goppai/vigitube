@@ -1,6 +1,6 @@
 {
   "name": "testing",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "antd": "^3.5.3",
@@ -16,7 +16,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "react-app-rewired build && gh-pages -d build -b build"
+    "deploy": "react-app-rewired build && gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-import": "^1.7.0",
