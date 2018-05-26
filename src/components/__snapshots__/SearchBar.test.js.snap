@@ -21,7 +21,7 @@ exports[`<SearchBar/> renders 1`] = `
   </a>
   <a
     className="github-repo-link"
-    href=""
+    href="https://github.com/ViGi-P/vigitube"
     rel="noopener noreferrer"
     target="_blank"
   >

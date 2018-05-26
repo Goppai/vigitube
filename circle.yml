@@ -16,7 +16,7 @@ test:
     - yarn test -- --coverage -u
   post:
     - yarn global add codeclimate-test-reporter
-    - codeclimate-test-reporter < public/coverage/lcov.info
+    - codeclimate-test-reporter < coverage/lcov.info
 deployment:
   production:
     branch: master
