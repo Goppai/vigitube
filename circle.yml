@@ -5,8 +5,8 @@ machine:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 general:
   branches:
-    only:
-      - master
+    ignore:
+      - gh-pages
 dependencies:
   override:
     - yarn
