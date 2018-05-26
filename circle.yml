@@ -1,12 +1,19 @@
 machine:
   node:
     version: 8.11.1
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
 compile:
   override:
-    - npm run build
+    - yarn build
 test:
   override:
-    - npm run test -- --coverage
+    - yarn test -- --coverage
   post:
     - npm install -g codeclimate-test-reporter
     - codeclimate-test-reporter < public/coverage/lcov.info
@@ -14,4 +21,4 @@ deployment:
   production:
     branch: master
     commands:
-      - npm run deploy
+      - yarn deploy
