@@ -3,6 +3,10 @@ machine:
     version: 8.11.1
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+general:
+  branches:
+    only:
+      - master
 dependencies:
   override:
     - yarn
