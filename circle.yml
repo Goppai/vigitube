@@ -13,7 +13,7 @@ compile:
     - yarn build
 test:
   override:
-    - yarn test --coverage
+    - yarn test -- --coverage -u
   post:
     - yarn global add codeclimate-test-reporter
     - codeclimate-test-reporter < public/coverage/lcov.info
