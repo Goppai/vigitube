@@ -1,16 +1,12 @@
 machine:
   node:
     version: 8.11.1
-dependencies:
-  pre:
-    - npm install -g  yarn
-    - yarn install
 compile:
   override:
-    - yarn build
+    - npm run build
 test:
   override:
-    - yarn test -- --coverage
+    - npm run test -- --coverage
   post:
     - npm install -g codeclimate-test-reporter
     - codeclimate-test-reporter < public/coverage/lcov.info
@@ -18,4 +14,4 @@ deployment:
   production:
     branch: master
     commands:
-      - yarn deploy
+      - npm run deploy
