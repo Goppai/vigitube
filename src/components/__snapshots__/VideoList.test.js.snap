@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoList/> renders 1`] = `
+<Col
+  className="video-list"
+  lg={7}
+  xs={24}
+>
+  <List
+    bordered={false}
+    dataSource={Array []}
+    itemLayout="vertical"
+    loading={false}
+    pagination={false}
+    prefixCls="ant-list"
+    renderItem={[Function]}
+    split={true}
+  />
+</Col>
+`;

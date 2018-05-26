@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> renders 1`] = `
+<Col
+  className="center-text footer"
+  xs={24}
+>
+  <Adapter>
+    <span
+      className="footer-child"
+    >
+      text
+    </span>
+  </Adapter>
+</Col>
+`;

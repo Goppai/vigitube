@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoListItem/> renders 1`] = `
+<Item
+  className="video-list-item"
+  extra={
+    <img
+      alt="video-thumbnail"
+      src="some-url"
+      width={100}
+    />
+  }
+  onClick={[Function]}
+>
+  <Meta
+    title="Some title"
+  />
+</Item>
+`;

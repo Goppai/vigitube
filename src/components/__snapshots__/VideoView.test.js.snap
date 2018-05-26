@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VideoView/> renders 1`] = `
+<Col
+  className="video-view"
+  lg={17}
+  xs={24}
+>
+  <iframe
+    allowFullScreen={true}
+    className="width-100"
+    frameBorder={0}
+    src="https://www.youtube.com/embed/test-id?rel=0"
+    style={
+      Object {
+        "height": 360,
+      }
+    }
+    title="video-player"
+  />
+  <Card
+    className="video-details"
+    title="Test-title"
+  >
+    <Component
+      description="Test-description"
+    />
+  </Card>
+</Col>
+`;

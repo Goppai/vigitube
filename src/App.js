@@ -1,58 +1,47 @@
-import React, { Component } from 'react';
-import YTSearch from 'youtube-api-search';
-import _ from 'lodash';
+import React, { Component } from 'react'
+import { Row, Icon } from 'antd'
+import { SearchBar, VideoView, VideoList, Footer } from './components'
+import { search } from './utilities/functions'
+import './App.css'
 
-import SearchBar from './SearchBar';
-import VideoList from './VideoList';
-import VideoDetails from './VideoDetails';
-// import CustomModal from './CustomModal';
-
-const API_KEY = 'AIzaSyCgoeuaHAXVtwL8_eAn6r6XzU7N8lMLwRw';
-
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+class App extends Component {
+  constructor() {
+    super()
     this.state = {
       videos: [],
-      selected: null,
-      // showModal: true
-    };
-
-    this.videoSearch('');
+      selectedVideo: null
+    }
   }
 
-  videoSearch = term => {
-    YTSearch({ key: API_KEY, term }, videos => {
+  componentDidMount() {
+    search().then(videos => {
       this.setState({
         videos,
-        selected: videos[0]
-      });
-      console.log('state', this.state.videos, this.state.selected);
-    });
+        selectedVideo: videos[0]
+      })
+    })
   }
-
-  closeModal = () => this.setState({ showModal: false })
 
   render() {
-    const videoSearch = _.debounce(term => {this.videoSearch(term)}, 200);
-
+    const { videos, selectedVideo } = this.state
     return (
-      <div>
-        <SearchBar onSearch={videoSearch}/>
-        <VideoDetails video={this.state.selected}/>
-        <VideoList
-          videos={this.state.videos}
-          selectVideo={selected => this.setState({ selected })}
+      <Row className='width-100'>
+        <SearchBar
+          search={query => search(query)
+            .then(videos => this.setState({
+              videos,
+              selectedVideo: videos[0]
+            }))
+          }
         />
-        <div className='footer'>
-          powered by <a href='https://www.youtube.com'>youtube</a>
-        </div>
-        {/* {
-          this.state.showModal ?
-          <CustomModal closeModal={this.closeModal}/> :
-          null
-        } */}
-      </div>
-    );
+        {selectedVideo && <VideoView selectedVideo={selectedVideo}/>}
+        {videos && <VideoList selectVideo={selectedVideo => this.setState({ selectedVideo })} videos={videos}/>}
+        <Footer>
+          <span>Powered by <a href='https://www.youtube.com/' target='_blank' rel='noopener noreferrer'><Icon type='youtube'/></a></span>
+        </Footer>
+      </Row>
+    )
   }
 }
+
+export default App

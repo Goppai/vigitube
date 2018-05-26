@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> renders 1`] = `
+<Row
+  className="width-100"
+  gutter={0}
+>
+  <Component
+    search={[Function]}
+  />
+  <Component
+    selectVideo={[Function]}
+    videos={Array []}
+  />
+  <Component>
+    <span>
+      Powered by 
+      <a
+        href="https://www.youtube.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <Icon
+          type="youtube"
+        />
+      </a>
+    </span>
+  </Component>
+</Row>
+`;

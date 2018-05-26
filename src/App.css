@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* SearchBar */
+
+.search-bar {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.vigitube {
+  margin: 0 10px;
+  font-size: 28px;
+  font-family: monospace;
+}
+
+.github-repo-link {
+  text-align: right;
+  margin: 0 30px 0 20px;
+  font-size: 28px;
+}
+
+@media (max-width: 425px) {
+  .search-bar {
+    flex-wrap: wrap;
+  }
+
+  .vigitube {
+    margin: 0 0 10px 0;
+    padding-left: 4px;
+    width: 50%;
+  }
+
+  .github-repo-link {
+    width: 50%;
+    margin: 0;
+  }
+}
+
+.vigitube-part-one {
+  transition: color .3s ease;
+}
+
+.vigitube-part-two {
+  color: deepskyblue;
+  transition: color .3s ease;
+}
+
+.vigitube:hover .vigitube-part-one {
+  color: deepskyblue;
+}
+
+.vigitube:hover .vigitube-part-two {
+  color: indianred;
+}
+
+/* VideoView */
+
+.video-view {
+  padding: 0 0 10px 0;
+}
+
+@media (min-width: 992px) {
+  .video-view {
+    padding: 0 10px 10px 0;
+  }
+}
+
+/* VideoList */
+
+.video-list {
+  margin: 0 0 10px 0;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+}
+
+/* VideoListItem */
+
+.video-list-item {
+  cursor: pointer;
+  padding: 10px;
+  border: 0;
+  transition: background-color .3s ease;
+}
+
+.video-list-item:hover {
+  background-color: #eee;
+}
+
+/* Footer */
+
+.footer {
+  font-family: monospace;
+}
+
+.footer span {
+  font-size: 18px;
+}
+
+/* overrides */
+.ant-card-bordered {
+  border-radius: 4px !important;
+}
+
+.ant-layout-footer {
+  background: #fff !important;
+}

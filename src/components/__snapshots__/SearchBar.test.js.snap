@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchBar/> renders 1`] = `
+<Col
+  className="search-bar"
+  xs={24}
+>
+  <a
+    className="vigitube"
+  >
+    <span
+      className="vigitube-part-one"
+    >
+      Vigi
+    </span>
+    <span
+      className="vigitube-part-two"
+    >
+      Tube
+    </span>
+  </a>
+  <a
+    className="github-repo-link"
+    href=""
+    rel="noopener noreferrer"
+    target="_blank"
+  >
+    <Icon
+      type="github"
+    />
+  </a>
+  <Debounce
+    handler="onChange"
+    handlers={Array []}
+    time="500"
+  >
+    <Search
+      className="search-input"
+      enterButton={true}
+      inputPrefixCls="ant-input"
+      onChange={[Function]}
+      onSearch={[Function]}
+      placeholder="Search"
+      prefixCls="ant-input-search"
+      size="large"
+    />
+  </Debounce>
+</Col>
+`;

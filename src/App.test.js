@@ -1,8 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from 'react'
+import { shallow } from 'enzyme'
+import toJson from 'enzyme-to-json'
+import App from './App'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-});
+describe('<App/>', () => {
+  const wrapper = shallow(<App/>)
+
+  it('renders', () => {
+    expect(toJson(wrapper)).toMatchSnapshot()
+  })
+
+  it('has intial state set correctly', () => {
+    expect(wrapper.state().videos.length).toBe(0)
+    expect(wrapper.state().selectedVideo).toBeNull()
+  })
+})
