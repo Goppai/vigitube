@@ -29,29 +29,24 @@ class App extends Component {
 
   render() {
     const { videos, selectedVideo, nextPageToken, query } = this.state
-
     return (
       <Row className='width-100'>
         <SearchBar
           search={this.search}
         />
-        {
-          selectedVideo && <VideoView selectedVideo={selectedVideo}/>
-        }
-        {
-          videos && <VideoList
-            selectVideo={selectedVideo => this.setState({ selectedVideo })}
-            videos={videos}
-            loadMore={() => loadMore(nextPageToken, query)
-              .then(({ items, nextPageToken }) => {
-                this.setState({
-                  videos: videos.concat(items),
-                  nextPageToken
-                })
+        {selectedVideo && <VideoView selectedVideo={selectedVideo}/>}
+        {videos && <VideoList
+          selectVideo={selectedVideo => this.setState({ selectedVideo })}
+          videos={videos}
+          loadMore={() => loadMore(nextPageToken, query)
+            .then(({ items, nextPageToken }) => {
+              this.setState({
+                videos: videos.concat(items),
+                nextPageToken
               })
-            }
-          />
-        }
+            })
+          }
+        />}
         <Footer>
           <span>Powered by <a href='https://www.youtube.com/' target='_blank' rel='noopener noreferrer'><Icon type='youtube'/></a></span>
         </Footer>
