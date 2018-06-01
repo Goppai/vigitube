@@ -26,7 +26,7 @@ Building app for deployment:
 yarn build
 ```
 
-Deploying to branch-`build` for github-pages:
+Deploying to branch `gh-pages`:
 
 ```
 yarn deploy
