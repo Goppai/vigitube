@@ -4,11 +4,15 @@ function youFetch(url) {
   return fetch(url).then(res => res.json())
 }
 
+function urlIfy(params) {
+  return Object.keys(params).reduce((acc, nextKey) => acc.concat(nextKey, '=', params[nextKey], '&'), `${ROOT_URL}?`)
+}
+
 export async function search(q = '') {
   const params = {
     key, q, ...commonParams, maxResults: '3'
   }
-  const url = Object.keys(params).reduce((acc, nextKey) => acc.concat(nextKey, '=', params[nextKey], '&'), `${ROOT_URL}?`)
+  const url = urlIfy(params)
 
   try {
     return await youFetch(url).then(res => ({ query: q, ...res }))
@@ -22,7 +26,7 @@ export async function loadMore(pageToken = '', q = '') {
     key, q, ...commonParams, maxResults: '7',
     ...(pageToken && typeof pageToken === 'string' ? { pageToken } : {})
   }
-  const url = Object.keys(params).reduce((acc, nextKey) => acc.concat(nextKey, '=', params[nextKey], '&'), `${ROOT_URL}?`)
+  const url = urlIfy(params)
 
   try {
     return await youFetch(url)
