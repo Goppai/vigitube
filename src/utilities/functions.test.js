@@ -1,28 +1,24 @@
 import { search, loadMore } from './functions'
 
-const expectedArray = [1, 2, 3, 4, 5, 6, 7].map(() => ({
-  id: {
-    videoId: expect.anything()
-  },
-  snippet: {
-    title: expect.anything(),
-    channelTitle: expect.anything(),
-    description: expect.anything()
+describe('YouTube search functions', () => {
+  function expectVideoProperties(item) {
+    expect(item).toHaveProperty('id.videoId')
+    expect(item).toHaveProperty('snippet.title')
+    expect(item).toHaveProperty('snippet.channelTitle')
+    expect(item).toHaveProperty('snippet.description')
   }
-}))
 
-describe('search()', () => {
-  it('resolves to an object with - an array containing 3 objects with expected properties; nextPageToken', async () => {
+  test('search()', async () => {
     const res = await search()
-    expect(res.items).toMatchObject(expectedArray.slice(2))
+    expect(res.items.length).toBe(3)
+    res.items.forEach(expectVideoProperties)
     expect(typeof res.nextPageToken).toBe('string')
   })
-})
 
-describe('loadMore()', () => {
-  it('resolves to an object with - an array containing 7 objects with expected properties; nextPageToken', async () => {
+  test('loadMore()', async () => {
     const res = await loadMore('CAMQAA')
-    expect(res.items).toMatchObject(expectedArray)
+    expect(res.items.length).toBe(7)
+    res.items.forEach(expectVideoProperties)
     expect(typeof res.nextPageToken).toBe('string')
   })
 })

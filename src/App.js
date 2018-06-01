@@ -19,12 +19,15 @@ class App extends Component {
   }
 
   search = (query = '') => youSearch(query)
-  .then(({ items, nextPageToken, query }) => {
-    this.setState({
-      videos: items,
-      selectedVideo: items[0],
-      nextPageToken, query
-    })
+  .then(res => {
+    if (res) {
+      const { items, nextPageToken, query } = res
+      this.setState({
+        videos: items,
+        selectedVideo: items[0],
+        nextPageToken, query
+      })
+    }
   })
 
   render() {
