@@ -10,6 +10,18 @@ exports[`<VideoList/> renders 1`] = `
     bordered={false}
     dataSource={Array []}
     itemLayout="vertical"
+    loadMore={
+      <Button
+        className="load-more-btn"
+        ghost={false}
+        loading={false}
+        onClick={undefined}
+        prefixCls="ant-btn"
+        type="primary"
+      >
+        Load More
+      </Button>
+    }
     loading={false}
     pagination={false}
     prefixCls="ant-list"

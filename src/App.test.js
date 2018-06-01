@@ -12,6 +12,8 @@ describe('<App/>', () => {
 
   it('has intial state set correctly', () => {
     expect(wrapper.state().videos.length).toBe(0)
+    expect(wrapper.state().nextPageToken.length).toBe(0)
+    expect(wrapper.state().query.length).toBe(0)
     expect(wrapper.state().selectedVideo).toBeNull()
   })
 })

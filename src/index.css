@@ -83,6 +83,24 @@ body {
   margin: 0 0 10px 0;
   border: 1px solid #e8e8e8;
   border-radius: 4px;
+  max-height: 60vh;
+  overflow: auto;
+}
+
+.load-more-btn {
+  width: 96%;
+  margin: 2%;
+}
+
+@media (min-width: 992px) {
+  .video-list {
+    max-height: 90vh;
+  }
+
+  .load-more-btn {
+    width: 90%;
+    margin: 5%;
+  }
 }
 
 /* VideoListItem */
