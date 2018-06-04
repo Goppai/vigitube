@@ -16,10 +16,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "echo-cname": "echo tube.vigneshprasad.com > build/CNAME",
     "cp-circle": "cp circle.yml build/circle.yml",
     "eject": "react-scripts eject",
-    "deploy": "react-app-rewired build && gh-pages -d build"
+    "deploy": "react-app-rewired build && yarn cp-circle && gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-import": "1.7.0",
