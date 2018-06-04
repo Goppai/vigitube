@@ -2,7 +2,7 @@
   "name": "vigitube",
   "version": "1.1.0",
   "private": true,
-  "homepage": "http://vigi-p.github.io/",
+  "homepage": "https://vigi-p.github.io/",
   "dependencies": {
     "antd": "3.6.1",
     "react": "16.4.0",
@@ -19,7 +19,7 @@
     "echo-cname": "echo tube.vigneshprasad.com > build/CNAME",
     "cp-circle": "cp circle.yml build/circle.yml",
     "eject": "react-scripts eject",
-    "deploy": "react-app-rewired build && yarn echo-cname && yarn cp-circle && gh-pages -d build"
+    "deploy": "react-app-rewired build && gh-pages -d build"
   },
   "devDependencies": {
     "babel-plugin-import": "1.7.0",
