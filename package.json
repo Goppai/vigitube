@@ -5,8 +5,8 @@
   "homepage": "https://vigi-p.github.io/vigitube/",
   "dependencies": {
     "antd": "3.7.3",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "react": "16.5.0",
+    "react-dom": "16.5.0",
     "react-scripts": "1.1.5",
     "react-sizeme": "2.5.2",
     "react-throttle": "0.3.0",
@@ -28,6 +28,6 @@
     "gh-pages": "1.2.0",
     "react-app-rewire-less": "2.1.2",
     "react-app-rewired": "1.6.2",
-    "react-test-renderer": "16.4.2"
+    "react-test-renderer": "16.5.0"
   }
 }
